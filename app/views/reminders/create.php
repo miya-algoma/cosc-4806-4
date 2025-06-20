@@ -1,4 +1,5 @@
 <?php require_once 'app/views/templates/header.php'; ?>
+
 <div class="container mt-4">
     <h2>Create a New Reminder</h2>
     <form action="/reminders/store" method="post">
@@ -9,4 +10,6 @@
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
 </div>
+
 <?php require_once 'app/views/templates/footer.php'; ?>
+

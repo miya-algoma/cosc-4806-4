@@ -20,14 +20,27 @@ class Reminders extends Controller {
             exit;
         }
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Only show the form
+        $this->view('reminders/create');
+    }
+
+    public function store() {
+        session_start();
+        if (!isset($_SESSION['auth'])) {
+            header("Location: /login");
+            exit;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['subject'])) {
             $subject = trim($_POST['subject']);
             $this->model('Reminder')->create($_SESSION['user_id'], $subject);
             header("Location: /reminders");
             exit;
         }
 
-        $this->view('reminders/create');
+        // fallback if direct GET request
+        header("Location: /reminders/create");
+        exit;
     }
 
     public function edit($id) {

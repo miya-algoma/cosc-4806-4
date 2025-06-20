@@ -9,6 +9,11 @@
                 </div>
             </div>
         </div>
+        <style>
+          body {
+            font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+          }
+        </style>
 
         <div class="row">
             <div class="col-lg-12">

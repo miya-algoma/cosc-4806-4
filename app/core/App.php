@@ -14,7 +14,7 @@ class App {
 
         $url = $this->parseUrl();
 
-        // ✅ FIX: check if $url[1] exists before using it
+        
         if (isset($url[1]) && file_exists('app/controllers/' . $url[1] . '.php')) {
             $this->controller = $url[1];
             $_SESSION['controller'] = $this->controller;

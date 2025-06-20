@@ -1,6 +1,6 @@
 <?php
 
-class Reminders extends Controller {
+class reminders extends Controller {
     public function index() {
         session_start();
         if (!isset($_SESSION['auth'])) {
